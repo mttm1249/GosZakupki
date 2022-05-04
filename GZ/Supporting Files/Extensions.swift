@@ -8,6 +8,7 @@
 import UIKit
 
 // MARK: - Hide Keyboard Method
+
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -20,6 +21,7 @@ extension UIViewController {
 }
 
 // MARK: - EncodingURL Method
+
 extension String{
     var encodeUrl : String
     {

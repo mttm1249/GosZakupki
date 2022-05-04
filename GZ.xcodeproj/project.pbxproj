@@ -72,8 +72,6 @@
 		DA4D1E3E282135D0001A66C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DAD5E5B2282019A700C4261A /* AppDelegate.swift */,
-				DAD5E5B4282019A700C4261A /* SceneDelegate.swift */,
 				DAD9E0F928204E21007F5D67 /* Extensions.swift */,
 				DAD5E5BB282019A700C4261A /* Assets.xcassets */,
 				DA7D1B2528226EFD005451B6 /* .gitignore */,
@@ -82,33 +80,27 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DA4D1E3F282135F9001A66C9 /* Storyboards */ = {
+		DA4D1E3F282135F9001A66C9 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				DA563E0F2822D21D00445AA9 /* Main.storyboard */,
 				DAD5E5BD282019A700C4261A /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		DA4D1E402821361A001A66C9 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				DAD5E5C928201A0F00C4261A /* CustomCell.swift */,
 				DA4D1E4328213C2F001A66C9 /* PurchaseCell.xib */,
+				DAD5E5C928201A0F00C4261A /* CustomCell.swift */,
 			);
-			path = Cells;
+			path = View;
 			sourceTree = "<group>";
 		};
-		DA4D1E4128213625001A66C9 /* ViewControllers */ = {
+		DA4D1E4128213625001A66C9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DAD5E5B2282019A700C4261A /* AppDelegate.swift */,
+				DAD5E5B4282019A700C4261A /* SceneDelegate.swift */,
 				DAD5E5CD2820246000C4261A /* MainViewController.swift */,
 				DAD5E5B6282019A700C4261A /* PurchasesViewController.swift */,
 				DA563E112822DA2300445AA9 /* FavoritesViewController.swift */,
-				DA4D1E402821361A001A66C9 /* Cells */,
 			);
-			path = ViewControllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		DA4D1E422821363B001A66C9 /* Models */ = {
@@ -140,9 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				DA4D1E3D282135C2001A66C9 /* Network */,
-				DA4D1E4128213625001A66C9 /* ViewControllers */,
 				DA4D1E422821363B001A66C9 /* Models */,
-				DA4D1E3F282135F9001A66C9 /* Storyboards */,
+				DA4D1E3F282135F9001A66C9 /* View */,
+				DA4D1E4128213625001A66C9 /* Controllers */,
 				DA4D1E3E282135D0001A66C9 /* Supporting Files */,
 			);
 			path = GZ;

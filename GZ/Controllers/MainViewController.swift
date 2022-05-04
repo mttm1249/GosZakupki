@@ -8,16 +8,16 @@
 import UIKit
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-        
+    
     let shared = CurrentURL.shared
     let pickerArrayComponents = ["44-ФЗ", "223-ФЗ"]
-  
+    
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet var regionTextField: UITextField!
     @IBOutlet weak var responsibleNameLabel: UITextField!
     @IBOutlet weak var purchaseObjectInfoLabel: UITextField!
     @IBOutlet var innTextField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.dataSource = self
@@ -27,6 +27,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     // MARK: UIPickerViewDataSource
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -50,7 +51,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
     
-    // Ограничение вводимых символов в поле региона
+    // MARK: UITextFieldDelegate
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let textFieldText = textField.text,
               let rangeOfTextToReplace = Range(range, in: textFieldText) else {
@@ -60,15 +62,16 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let count = textFieldText.count - substringToReplace.count + string.count
         return count <= 2
     }
-        
+    
     // Кнопка перехода на страницу с закупками
     @IBAction func showButton(_ sender: Any) {
         saveChanges()
         performSegue(withIdentifier: "showPurchases", sender: nil)
     }
     
+    // MARK: Save
     private func saveChanges() {
-       // Поиск по региону
+        // Поиск по региону
         if regionTextField.text != "" {
             shared.region = shared.segmentRegion + regionTextField.text!
             let regionNumber = Int(regionTextField.text!)!

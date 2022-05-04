@@ -8,7 +8,8 @@
 import Foundation
 
 class CurrentURL {
-    // Default values
+    
+    // Default value
     var url = "https://fz44.gosplan.info/api/v1/purchases"
 
     // URL Segments

@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - PurchaseElement
+
 struct Purchase: Codable {
     let region: Int
     let purchaseObjectInfo: String

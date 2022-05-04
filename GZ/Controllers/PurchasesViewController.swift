@@ -24,7 +24,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         fetch()
         navigationItem.title = "Стр. \(network.page)"
     }
-           
+    
     func saveUserData(_ purchases: [Purchase]) {
         let context = AppDelegate.getContext()
         for purchase in purchases {
@@ -44,6 +44,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: Load data from JSON
+    
     func fetch() {
         network.loadJson() { (result) in
             switch result {
@@ -77,7 +78,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         navigationItem.title = "Стр. \(network.page)"
         tableView.reloadData()
     }
-   
+    
     // Индикатор загрузки
     func showLoadingIndicator() {
         let spinner = UIActivityIndicatorView(style: .medium)
@@ -94,6 +95,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: UITableViewDataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return purchasesArray.count
     }

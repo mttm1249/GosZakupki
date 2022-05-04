@@ -11,12 +11,12 @@ import CoreData
 class FavoritesViewController: UITableViewController {
     
     var favoritePurchasesArray: [FavoritePurchase] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCustomCell()
     }
-        
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let context = AppDelegate.getContext()
@@ -28,7 +28,7 @@ class FavoritesViewController: UITableViewController {
         }
         tableView.reloadData()
     }
-
+    
     func deleteTask(_ tableView: UITableView, at indexPath: IndexPath) {
         self.favoritePurchasesArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .bottom)
@@ -48,27 +48,28 @@ class FavoritesViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
     // Регистрируем CustomCell
     func registerCustomCell() {
         let customCell = UINib(nibName: "PurchaseCell", bundle: nil)
         self.tableView.register(customCell,forCellReuseIdentifier: "CustomCell")
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoritePurchasesArray.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as? CustomCell
         else { return UITableViewCell() }
         cell.setup(data: favoritePurchasesArray[indexPath.row])
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deleteTask(tableView, at: indexPath)
