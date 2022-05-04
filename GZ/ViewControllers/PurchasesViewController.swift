@@ -10,7 +10,6 @@ import UIKit
 class PurchasesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var pagesCount = 1
-    
     let network = NetworkManager()
     var purchasesArray = [Purchase]()
     
@@ -23,30 +22,23 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         registerCustomCell()
         fetch()
-        navigationItem.title = "Страница: \(pagesCount)"
+        navigationItem.title = "Стр. \(pagesCount)"
     }
            
-    func showLoadingIndicator() {
-        let spinner = UIActivityIndicatorView(style: .medium)
-        spinner.startAnimating()
-        spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
-        self.tableView.tableFooterView = spinner
-        self.tableView.tableFooterView?.isHidden = false
-    }
-    
+    // MARK: Load data from JSON
     func fetch() {
         network.loadJson() { (result) in
             switch result {
             case .success(let data):
-                self.parse(jsonData: data)
+                self.load(jsonData: data)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
-        print("loading data")
+        print("loading")
     }
     
-    func parse(jsonData: Data) {
+    func load(jsonData: Data) {
         do {
             let decodedData = try JSONDecoder().decode(Purchases.self, from: jsonData)
             purchasesArray = decodedData
@@ -58,21 +50,33 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    // Листаем страницы
     @IBAction func nextDayButton(_ sender: Any) {
         network.nextPage()
         purchasesArray.removeAll()
         tableView.tableFooterView?.isHidden = false
         fetch()
         pagesCount += 1
-        navigationItem.title = "Страница: \(pagesCount)"
+        navigationItem.title = "Стр. \(pagesCount)"
         tableView.reloadData()
     }
    
+    // Индикатор загрузки
+    func showLoadingIndicator() {
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.startAnimating()
+        spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+        self.tableView.tableFooterView = spinner
+        self.tableView.tableFooterView?.isHidden = false
+    }
+    
+    // Регистрируем CustomCell
     func registerCustomCell() {
         let asteroidCell = UINib(nibName: "PurchaseCell", bundle: nil)
         self.tableView.register(asteroidCell,forCellReuseIdentifier: "CustomCell")
     }
     
+    // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return purchasesArray.count
     }
@@ -84,7 +88,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    // Hide spinner method
+    // Скрываем индикатор загрузки
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastSectionIndex = tableView.numberOfSections - 1
         let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1

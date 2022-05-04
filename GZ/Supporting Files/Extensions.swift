@@ -18,3 +18,11 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+// MARK: - EncodingURL Method
+extension String{
+    var encodeUrl : String
+    {
+        return self.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+    }
+}

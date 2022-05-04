@@ -114,7 +114,9 @@
                     <connections>
                         <outlet property="innTextField" destination="wed-gp-OiU" id="5cY-sv-wl8"/>
                         <outlet property="pickerView" destination="vNG-dC-ZCR" id="bum-Oa-Zcj"/>
+                        <outlet property="purchaseObjectInfoLabel" destination="cfH-7q-jgu" id="bq0-1w-1ul"/>
                         <outlet property="regionTextField" destination="36d-GM-Za8" id="LlQ-ZG-huF"/>
+                        <outlet property="responsibleNameLabel" destination="T6t-Bd-Gud" id="bZQ-SC-yeS"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showPurchases" id="QK3-aU-nZq"/>
                     </connections>
                 </viewController>
@@ -154,7 +156,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RHU-cJ-ySp" secondAttribute="trailing" id="SFm-gj-f9n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5Y3-IL-BGt">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="5Y3-IL-BGt">
                         <barButtonItem key="rightBarButtonItem" image="arrow.right" catalog="system" id="EQF-PV-iQq">
                             <connections>
                                 <action selector="nextDayButton:" destination="BYZ-38-t0r" id="PTY-Ho-bJG"/>

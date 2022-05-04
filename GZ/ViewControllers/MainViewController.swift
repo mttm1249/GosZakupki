@@ -8,13 +8,14 @@
 import UIKit
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-    
-    override var shouldAutorotate: Bool { return false }
-    
+        
+    let shared = CurrentURL.shared
     let pickerArrayComponents = ["44-ФЗ", "223-ФЗ"]
   
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet var regionTextField: UITextField!
+    @IBOutlet weak var responsibleNameLabel: UITextField!
+    @IBOutlet weak var purchaseObjectInfoLabel: UITextField!
     @IBOutlet var innTextField: UITextField!
 
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         hideKeyboardWhenTappedAround()
     }
     
+    // MARK: UIPickerViewDataSource
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -40,16 +42,17 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch row {
         case 0:
-            CurrentURL.shared.url = CurrentURL.shared.fz44URL
-            CurrentURL.shared.defaultLawNumber = "44-ФЗ"
+            shared.url = CurrentURL.shared.fz44URL
+            shared.defaultLawNumber = "44-ФЗ"
         case 1:
-            CurrentURL.shared.url = CurrentURL.shared.fz223URL
-            CurrentURL.shared.defaultLawNumber = "223-ФЗ"
+            shared.url = CurrentURL.shared.fz223URL
+            shared.defaultLawNumber = "223-ФЗ"
         default:
             break
         }
     }
     
+    // Ограничение вводимых символов в поле региона
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let textFieldText = textField.text,
               let rangeOfTextToReplace = Range(range, in: textFieldText) else {
@@ -60,41 +63,41 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         return count <= 3
     }
         
-    private func animate(_ button: UIButton) {
-        button.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        
-        UIView.animate(withDuration: 0.9,
-                       delay: 0,
-                       usingSpringWithDamping: CGFloat(1.0),
-                       initialSpringVelocity: CGFloat(60.0),
-                       options: UIView.AnimationOptions.allowUserInteraction,
-                       animations: {
-            button.transform = CGAffineTransform.identity
-        },
-                       completion: { Void in()  }
-        )
-    }
-        
+    // Кнопка перехода на страницу с закупками
     @IBAction func showButton(_ sender: Any) {
         saveChanges()
         performSegue(withIdentifier: "showPurchases", sender: nil)
     }
+    
     private func saveChanges() {
+       // Поиск по региону
         if regionTextField.text != "" {
-            CurrentURL.shared.region = "&region=" + regionTextField.text!
+            shared.region = shared.segmentRegion + regionTextField.text!
             let regionNumber = Int(regionTextField.text!)!
             if regionNumber > 203 {
                 regionTextField.text = "203"
-                CurrentURL.shared.region = "&region=" + regionTextField.text!
+                shared.region = shared.segmentRegion + regionTextField.text!
             }
         } else {
-            CurrentURL.shared.region = ""
+            shared.region = ""
         }
-        let segment = CurrentURL.shared.segmentForInn
-        if innTextField.text != "" {
-            CurrentURL.shared.inn = segment + innTextField.text!
+        // Поиск по наименованию заказчика
+        if responsibleNameLabel.text != "" {
+            shared.name = shared.segmentName + responsibleNameLabel.text!
         } else {
-            CurrentURL.shared.inn = ""
+            shared.name = ""
+        }
+        // Поиск по ИНН
+        if innTextField.text != "" {
+            shared.inn = shared.segmentForInn + innTextField.text!
+        } else {
+            shared.inn = ""
+        }
+        // Поиск по наименованию закупки
+        if purchaseObjectInfoLabel.text != "" {
+            shared.info = shared.segmentInfo + purchaseObjectInfoLabel.text!
+        } else {
+            shared.info = ""
         }
     }
 }
