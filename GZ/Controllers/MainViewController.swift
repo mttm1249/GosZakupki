@@ -14,6 +14,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet var regionTextField: UITextField!
+    @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var responsibleNameLabel: UITextField!
     @IBOutlet weak var purchaseObjectInfoLabel: UITextField!
     @IBOutlet var innTextField: UITextField!
@@ -81,6 +82,12 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             }
         } else {
             shared.region = ""
+        }
+        // Поиск по номеру закупки
+        if numberTextField.text != "" {
+            shared.number = shared.segmentNumber + numberTextField.text!
+        } else {
+            shared.name = ""
         }
         // Поиск по наименованию заказчика
         if responsibleNameLabel.text != "" {

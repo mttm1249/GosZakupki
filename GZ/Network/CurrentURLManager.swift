@@ -17,10 +17,12 @@ class CurrentURL {
     let segmentForInn = "&responsible_inn="
     var segmentName = "&responsible_name="
     var segmentInfo = "&purchase_object_info="
+    var segmentNumber = "&purchase_number="
     var region = ""
     var inn = ""
     var name = ""
     var info = ""
+    var number = ""
 
     // Options for PickerView
     let fz44URL = "https://fz44.gosplan.info/api/v1/purchases"

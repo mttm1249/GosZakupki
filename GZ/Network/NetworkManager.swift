@@ -16,6 +16,7 @@ class NetworkManager {
     let inn = CurrentURL.shared.inn
     let name = CurrentURL.shared.name
     let info = CurrentURL.shared.info
+    let number = CurrentURL.shared.number
     let currentURL = CurrentURL.shared.url
     
     func nextPage() {
@@ -27,7 +28,7 @@ class NetworkManager {
     func loadJson(completion: @escaping (Result<Data, Error>) -> Void) {
         let convertedSegment = urlLastSegmentForPage.joined(separator: "")
         
-        let string = currentURL + convertedSegment + region + inn + name + info
+        let string = currentURL + convertedSegment + number + region + inn + name + info
         let encodedStr = string.encodeUrl
         
         if let url = URL(string: encodedStr) {

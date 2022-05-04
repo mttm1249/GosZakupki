@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fzU-z1-vnr">
-                                <rect key="frame" x="52" y="106" width="311" height="248"/>
+                                <rect key="frame" x="52" y="106" width="311" height="290"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNG-dC-ZCR">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="80"/>
@@ -35,8 +35,17 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Наименование заказчика" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T6t-Bd-Gud">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Поиск по номеру закупки" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X6o-gw-xQt">
                                         <rect key="frame" x="0.0" y="130" width="311" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="311" id="3rW-aB-erh"/>
+                                            <constraint firstAttribute="height" constant="34" id="uyL-zU-0U5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Наименование заказчика" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="T6t-Bd-Gud">
+                                        <rect key="frame" x="0.0" y="172" width="311" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Uom-My-4c1"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="311" id="Zu4-ge-Vq5"/>
@@ -45,7 +54,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Наименование закупки" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-7q-jgu">
-                                        <rect key="frame" x="0.0" y="172" width="311" height="34"/>
+                                        <rect key="frame" x="0.0" y="214" width="311" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Abn-xe-PjM"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="311" id="xzp-wj-BOr"/>
@@ -54,7 +63,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Поиск по ИНН" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wed-gp-OiU">
-                                        <rect key="frame" x="0.0" y="214" width="311" height="34"/>
+                                        <rect key="frame" x="0.0" y="256" width="311" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="YDW-Sh-AqY"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="311" id="y1T-pC-UJd"/>
@@ -69,21 +78,24 @@
                                     <constraint firstAttribute="trailing" secondItem="36d-GM-Za8" secondAttribute="trailing" id="7mb-RS-BJl"/>
                                     <constraint firstItem="cfH-7q-jgu" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="GXB-8W-OmR"/>
                                     <constraint firstAttribute="bottom" secondItem="wed-gp-OiU" secondAttribute="bottom" id="J58-kd-4jp"/>
+                                    <constraint firstItem="X6o-gw-xQt" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="JKj-NZ-B8s"/>
                                     <constraint firstItem="T6t-Bd-Gud" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="K3A-fk-Ca4"/>
+                                    <constraint firstAttribute="trailing" secondItem="X6o-gw-xQt" secondAttribute="trailing" id="KfD-Nd-SeS"/>
                                     <constraint firstItem="vNG-dC-ZCR" firstAttribute="top" secondItem="fzU-z1-vnr" secondAttribute="top" id="MD3-Di-k7v"/>
                                     <constraint firstAttribute="trailing" secondItem="cfH-7q-jgu" secondAttribute="trailing" id="MQk-n9-Nn8"/>
+                                    <constraint firstItem="T6t-Bd-Gud" firstAttribute="top" secondItem="X6o-gw-xQt" secondAttribute="bottom" constant="8" symbolic="YES" id="Rf8-Y0-dME"/>
                                     <constraint firstItem="36d-GM-Za8" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="TIw-xj-zDv"/>
                                     <constraint firstItem="cfH-7q-jgu" firstAttribute="top" secondItem="T6t-Bd-Gud" secondAttribute="bottom" constant="8" symbolic="YES" id="V8p-Gl-5P2"/>
                                     <constraint firstItem="vNG-dC-ZCR" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="XZh-Da-RJP"/>
+                                    <constraint firstItem="X6o-gw-xQt" firstAttribute="top" secondItem="36d-GM-Za8" secondAttribute="bottom" constant="8" symbolic="YES" id="bys-ey-Fp7"/>
                                     <constraint firstAttribute="trailing" secondItem="T6t-Bd-Gud" secondAttribute="trailing" id="eGp-dA-Smm"/>
                                     <constraint firstItem="wed-gp-OiU" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="hv0-YN-xq7"/>
                                     <constraint firstItem="36d-GM-Za8" firstAttribute="top" secondItem="vNG-dC-ZCR" secondAttribute="bottom" constant="8" symbolic="YES" id="nda-y8-8Ex"/>
-                                    <constraint firstItem="T6t-Bd-Gud" firstAttribute="top" secondItem="36d-GM-Za8" secondAttribute="bottom" constant="8" symbolic="YES" id="rKB-N1-hPR"/>
                                     <constraint firstAttribute="trailing" secondItem="wed-gp-OiU" secondAttribute="trailing" id="ugy-bA-DfH"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-GR-zie">
-                                <rect key="frame" x="97" y="382" width="220" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-GR-zie">
+                                <rect key="frame" x="97" y="418" width="220" height="31"/>
                                 <color key="backgroundColor" red="0.0040760971609999997" green="0.47923654319999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -113,6 +125,7 @@
                     <navigationItem key="navigationItem" id="1GX-Kv-Hxh"/>
                     <connections>
                         <outlet property="innTextField" destination="wed-gp-OiU" id="5cY-sv-wl8"/>
+                        <outlet property="numberTextField" destination="X6o-gw-xQt" id="76Y-j0-8se"/>
                         <outlet property="pickerView" destination="vNG-dC-ZCR" id="bum-Oa-Zcj"/>
                         <outlet property="purchaseObjectInfoLabel" destination="cfH-7q-jgu" id="bq0-1w-1ul"/>
                         <outlet property="regionTextField" destination="36d-GM-Za8" id="LlQ-ZG-huF"/>
