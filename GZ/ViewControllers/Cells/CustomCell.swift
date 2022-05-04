@@ -8,9 +8,7 @@
 import UIKit
 
 class CustomCell: UITableViewCell {
-    
-    let law = CurrentURL.shared.defaultLawNumber
-   
+       
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -18,11 +16,19 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var regionLabel: UILabel!
     
     func setup(data: Purchase) {
-        numberLabel.text = "\(law) №\(data.purchaseNumber)"
+        numberLabel.text = "№\(data.purchaseNumber)"
         regionLabel.text = "Регион закупки: \(data.region)"
         priceLabel.text = "\(data.maxPrice) ₽"
         nameLabel.text = "\(data.responsibleName)"
         infoLabel.text = "\(data.purchaseObjectInfo)"
+    }
+    
+    func setup(data: FavoritePurchase) {
+        numberLabel.text = "№\(data.purchaseNumber!)"
+        regionLabel.text = "Регион закупки: \(data.region)"
+        priceLabel.text = "\(data.maxPrice!) ₽"
+        nameLabel.text = "\(data.responsibleName!)"
+        infoLabel.text = "\(data.purchaseObjectInfo!)"
     }
 }
 
