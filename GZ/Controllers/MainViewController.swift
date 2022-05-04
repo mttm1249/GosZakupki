@@ -87,7 +87,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         if numberTextField.text != "" {
             shared.number = shared.segmentNumber + numberTextField.text!
         } else {
-            shared.name = ""
+            shared.number = ""
         }
         // Поиск по наименованию заказчика
         if responsibleNameLabel.text != "" {
