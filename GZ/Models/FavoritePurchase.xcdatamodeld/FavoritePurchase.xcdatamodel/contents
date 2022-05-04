@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavoritePurchase" representedClassName="FavoritePurchase" syncable="YES" codeGenerationType="class">
+        <attribute name="maxPrice" attributeType="String"/>
+        <attribute name="purchaseNumber" attributeType="String"/>
+        <attribute name="purchaseObjectInfo" attributeType="String"/>
+        <attribute name="region" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="responsibleName" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="FavoritePurchase" positionX="-63" positionY="-18" width="128" height="104"/>
+    </elements>
+</model>
