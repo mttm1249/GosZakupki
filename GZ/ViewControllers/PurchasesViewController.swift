@@ -14,6 +14,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     let network = NetworkManager()
     var purchasesArray = [Purchase]()
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {

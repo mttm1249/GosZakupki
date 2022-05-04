@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA4D1E3C282113BE001A66C9 /* CurrentURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D1E3B282113BE001A66C9 /* CurrentURLManager.swift */; };
 		DA4D1E4428213C2F001A66C9 /* PurchaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4D1E4328213C2F001A66C9 /* PurchaseCell.xib */; };
+		DA563E0C2822B65400445AA9 /* FavoritePurchase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA563E0A2822B65400445AA9 /* FavoritePurchase.xcdatamodeld */; };
 		DA7D1B2628226EFD005451B6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DA7D1B2528226EFD005451B6 /* .gitignore */; };
 		DAD5E5B3282019A700C4261A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5E5B2282019A700C4261A /* AppDelegate.swift */; };
 		DAD5E5B5282019A700C4261A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5E5B4282019A700C4261A /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		DA4D1E3B282113BE001A66C9 /* CurrentURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentURLManager.swift; sourceTree = "<group>"; };
 		DA4D1E4328213C2F001A66C9 /* PurchaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseCell.xib; sourceTree = "<group>"; };
+		DA563E0B2822B65400445AA9 /* FavoritePurchase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritePurchase.xcdatamodel; sourceTree = "<group>"; };
 		DA7D1B2528226EFD005451B6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DAD5E5AF282019A700C4261A /* GZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD5E5B2282019A700C4261A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD5E5CA28201A0F00C4261A /* PurchasesModel.swift */,
+				DA563E0A2822B65400445AA9 /* FavoritePurchase.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				DAD5E5CE2820246000C4261A /* MainViewController.swift in Sources */,
 				DAD5E5C828201A0500C4261A /* NetworkManager.swift in Sources */,
+				DA563E0C2822B65400445AA9 /* FavoritePurchase.xcdatamodeld in Sources */,
 				DAD5E5B7282019A700C4261A /* PurchasesViewController.swift in Sources */,
 				DAD9E0FA28204E21007F5D67 /* Extensions.swift in Sources */,
 				DAD5E5CB28201A0F00C4261A /* CustomCell.swift in Sources */,
@@ -440,6 +444,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA563E0A2822B65400445AA9 /* FavoritePurchase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA563E0B2822B65400445AA9 /* FavoritePurchase.xcdatamodel */,
+			);
+			currentVersion = DA563E0B2822B65400445AA9 /* FavoritePurchase.xcdatamodel */;
+			path = FavoritePurchase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DAD5E5A7282019A700C4261A /* Project object */;
 }
