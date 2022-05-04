@@ -94,8 +94,8 @@
                                     <constraint firstAttribute="trailing" secondItem="wed-gp-OiU" secondAttribute="trailing" id="ugy-bA-DfH"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-GR-zie">
-                                <rect key="frame" x="97" y="418" width="220" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-GR-zie">
+                                <rect key="frame" x="97" y="420" width="220" height="31"/>
                                 <color key="backgroundColor" red="0.0040760971609999997" green="0.47923654319999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -117,7 +117,7 @@
                             <constraint firstItem="zt2-GR-zie" firstAttribute="leading" secondItem="0Sg-l9-Ggt" secondAttribute="leading" constant="97" id="RZB-MN-OOg"/>
                             <constraint firstItem="fzU-z1-vnr" firstAttribute="leading" secondItem="0Sg-l9-Ggt" secondAttribute="leading" constant="52" id="hlu-f8-sVA"/>
                             <constraint firstItem="0Sg-l9-Ggt" firstAttribute="trailing" secondItem="fzU-z1-vnr" secondAttribute="trailing" constant="51" id="xBV-xW-YiI"/>
-                            <constraint firstItem="zt2-GR-zie" firstAttribute="top" secondItem="fzU-z1-vnr" secondAttribute="bottom" constant="28" id="xpo-XW-FGm"/>
+                            <constraint firstItem="zt2-GR-zie" firstAttribute="top" secondItem="fzU-z1-vnr" secondAttribute="bottom" constant="24" id="xpo-XW-FGm"/>
                             <constraint firstItem="0Sg-l9-Ggt" firstAttribute="trailing" secondItem="zt2-GR-zie" secondAttribute="trailing" constant="97" id="y01-NV-poj"/>
                         </constraints>
                     </view>
