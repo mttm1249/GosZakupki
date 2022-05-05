@@ -29,6 +29,7 @@ class FavoritesViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    // Удаление записи
     func deleteTask(_ tableView: UITableView, at indexPath: IndexPath) {
         self.favoritePurchasesArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .bottom)

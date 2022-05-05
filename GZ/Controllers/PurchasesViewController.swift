@@ -30,8 +30,8 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         for purchase in purchases {
             let newEntry = NSEntityDescription.insertNewObject(forEntityName: "FavoritePurchase", into: context)
             newEntry.setValue(purchase.region, forKey: "region")
-            newEntry.setValue(purchase.purchaseNumber, forKey: "purchaseNumber")
             newEntry.setValue(purchase.purchaseObjectInfo, forKey: "purchaseObjectInfo")
+            newEntry.setValue(purchase.purchaseNumber, forKey: "purchaseNumber")
             newEntry.setValue(purchase.maxPrice, forKey: "maxPrice")
             newEntry.setValue(purchase.responsibleName, forKey: "responsibleName")
         }
@@ -39,7 +39,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
             try context.save()
             print("Saved")
         } catch {
-            print("Error saving: \(error)")
+            print("Error saving: \(error.localizedDescription)")
         }
     }
     
@@ -118,15 +118,15 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // Добавляем в избранное
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction(style: .normal, title: "★") { (action, view, completion) in
+        let action = UIContextualAction(style: .normal, title: "★") { (action, view, completion) in
             let indexesToRedraw = [indexPath]
             let purchase = self.purchasesArray[indexPath.row]
             self.saveUserData([purchase])
             tableView.reloadRows(at: indexesToRedraw, with: .fade)
             tableView.reloadData()
         }
-        editAction.backgroundColor = #colorLiteral(red: 0, green: 0.4780646563, blue: 0.9985368848, alpha: 1)
-        let config = UISwipeActionsConfiguration(actions: [editAction])
+        action.backgroundColor = #colorLiteral(red: 0, green: 0.4780646563, blue: 0.9985368848, alpha: 1)
+        let config = UISwipeActionsConfiguration(actions: [action])
         config.performsFirstActionWithFullSwipe = true
         return config
     }

@@ -44,9 +44,9 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch row {
         case 0:
-            shared.url = CurrentURL.shared.fz44URL
+            shared.url = shared.fz44URL
         case 1:
-            shared.url = CurrentURL.shared.fz223URL
+            shared.url = shared.fz223URL
         default:
             break
         }
@@ -68,6 +68,14 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func showButton(_ sender: Any) {
         saveChanges()
         performSegue(withIdentifier: "showPurchases", sender: nil)
+    }
+    
+    @IBAction func clearButton(_ sender: Any) {
+        regionTextField.text = ""
+        numberTextField.text = ""
+        responsibleNameLabel.text = ""
+        purchaseObjectInfoLabel.text = ""
+        innTextField.text = ""
     }
     
     // MARK: Save
