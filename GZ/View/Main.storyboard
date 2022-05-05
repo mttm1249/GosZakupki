@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fzU-z1-vnr">
-                                <rect key="frame" x="52" y="106" width="311" height="290"/>
+                                <rect key="frame" x="52" y="84" width="311" height="329"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNG-dC-ZCR">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="80"/>
@@ -65,71 +65,94 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Поиск по ИНН" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wed-gp-OiU">
                                         <rect key="frame" x="0.0" y="256" width="311" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="YDW-Sh-AqY"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="311" id="y1T-pC-UJd"/>
+                                            <constraint firstAttribute="height" constant="34" id="Vn8-yF-FI0"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="311" id="o5s-id-P02"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msp-Rr-hZ4">
+                                        <rect key="frame" x="0.0" y="298" width="311" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="311" id="1jg-DO-W5y"/>
+                                            <constraint firstAttribute="height" constant="31" id="Bka-Q8-8VO"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.76760756969999999" green="0.76792591809999999" blue="0.77771943809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system" title=" Поиск по ОКПД2">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="LJT-ia-bzu" kind="presentation" id="7rp-Mx-c5T"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="vNG-dC-ZCR" secondAttribute="trailing" id="3z5-54-0zY"/>
-                                    <constraint firstItem="wed-gp-OiU" firstAttribute="top" secondItem="cfH-7q-jgu" secondAttribute="bottom" constant="8" symbolic="YES" id="3zM-tN-hLq"/>
                                     <constraint firstAttribute="trailing" secondItem="36d-GM-Za8" secondAttribute="trailing" id="7mb-RS-BJl"/>
+                                    <constraint firstItem="wed-gp-OiU" firstAttribute="top" secondItem="cfH-7q-jgu" secondAttribute="bottom" constant="8" symbolic="YES" id="D4A-e5-h9L"/>
                                     <constraint firstItem="cfH-7q-jgu" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="GXB-8W-OmR"/>
-                                    <constraint firstAttribute="bottom" secondItem="wed-gp-OiU" secondAttribute="bottom" id="J58-kd-4jp"/>
+                                    <constraint firstAttribute="trailing" secondItem="msp-Rr-hZ4" secondAttribute="trailing" id="Ifr-SR-iZz"/>
                                     <constraint firstItem="X6o-gw-xQt" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="JKj-NZ-B8s"/>
                                     <constraint firstItem="T6t-Bd-Gud" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="K3A-fk-Ca4"/>
                                     <constraint firstAttribute="trailing" secondItem="X6o-gw-xQt" secondAttribute="trailing" id="KfD-Nd-SeS"/>
                                     <constraint firstItem="vNG-dC-ZCR" firstAttribute="top" secondItem="fzU-z1-vnr" secondAttribute="top" id="MD3-Di-k7v"/>
                                     <constraint firstAttribute="trailing" secondItem="cfH-7q-jgu" secondAttribute="trailing" id="MQk-n9-Nn8"/>
+                                    <constraint firstAttribute="trailing" secondItem="wed-gp-OiU" secondAttribute="trailing" id="R3a-yz-a8w"/>
                                     <constraint firstItem="T6t-Bd-Gud" firstAttribute="top" secondItem="X6o-gw-xQt" secondAttribute="bottom" constant="8" symbolic="YES" id="Rf8-Y0-dME"/>
                                     <constraint firstItem="36d-GM-Za8" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="TIw-xj-zDv"/>
                                     <constraint firstItem="cfH-7q-jgu" firstAttribute="top" secondItem="T6t-Bd-Gud" secondAttribute="bottom" constant="8" symbolic="YES" id="V8p-Gl-5P2"/>
                                     <constraint firstItem="vNG-dC-ZCR" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="XZh-Da-RJP"/>
                                     <constraint firstItem="X6o-gw-xQt" firstAttribute="top" secondItem="36d-GM-Za8" secondAttribute="bottom" constant="8" symbolic="YES" id="bys-ey-Fp7"/>
                                     <constraint firstAttribute="trailing" secondItem="T6t-Bd-Gud" secondAttribute="trailing" id="eGp-dA-Smm"/>
-                                    <constraint firstItem="wed-gp-OiU" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="hv0-YN-xq7"/>
+                                    <constraint firstItem="msp-Rr-hZ4" firstAttribute="top" secondItem="wed-gp-OiU" secondAttribute="bottom" constant="8" symbolic="YES" id="eLL-XW-cXO"/>
+                                    <constraint firstAttribute="bottom" secondItem="msp-Rr-hZ4" secondAttribute="bottom" id="gCF-HR-SKo"/>
                                     <constraint firstItem="36d-GM-Za8" firstAttribute="top" secondItem="vNG-dC-ZCR" secondAttribute="bottom" constant="8" symbolic="YES" id="nda-y8-8Ex"/>
-                                    <constraint firstAttribute="trailing" secondItem="wed-gp-OiU" secondAttribute="trailing" id="ugy-bA-DfH"/>
+                                    <constraint firstItem="msp-Rr-hZ4" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="uLH-9f-hhj"/>
+                                    <constraint firstItem="wed-gp-OiU" firstAttribute="leading" secondItem="fzU-z1-vnr" secondAttribute="leading" id="zHu-sy-qiV"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-GR-zie">
-                                <rect key="frame" x="97" y="420" width="220" height="31"/>
-                                <color key="backgroundColor" red="0.0040760971609999997" green="0.47923654319999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Показать"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="showButton:" destination="vbC-hy-ivk" eventType="touchUpInside" id="0vT-UT-6hC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9K-zq-bEd">
-                                <rect key="frame" x="97" y="473" width="220" height="31"/>
+                                <rect key="frame" x="97" y="472" width="220" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Очистить всё"/>
                                 <connections>
                                     <action selector="clearButton:" destination="vbC-hy-ivk" eventType="touchUpInside" id="xUc-5O-yUz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zt2-GR-zie">
+                                <rect key="frame" x="97" y="433" width="220" height="31"/>
+                                <color key="backgroundColor" red="0.0040760971609999997" green="0.47923654319999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Показать закупки"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showButton:" destination="vbC-hy-ivk" eventType="touchUpInside" id="0vT-UT-6hC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Sg-l9-Ggt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fzU-z1-vnr" firstAttribute="top" secondItem="0Sg-l9-Ggt" secondAttribute="top" constant="18" id="1g5-VQ-IaX"/>
-                            <constraint firstItem="Q9K-zq-bEd" firstAttribute="top" secondItem="zt2-GR-zie" secondAttribute="bottom" constant="22" id="FLe-eT-soB"/>
-                            <constraint firstItem="zt2-GR-zie" firstAttribute="leading" secondItem="0Sg-l9-Ggt" secondAttribute="leading" constant="97" id="RZB-MN-OOg"/>
-                            <constraint firstItem="Q9K-zq-bEd" firstAttribute="leading" secondItem="0Sg-l9-Ggt" secondAttribute="leading" constant="97" id="bbA-Dr-qvi"/>
-                            <constraint firstItem="0Sg-l9-Ggt" firstAttribute="trailing" secondItem="Q9K-zq-bEd" secondAttribute="trailing" constant="97" id="edk-6Q-zye"/>
+                            <constraint firstItem="zt2-GR-zie" firstAttribute="top" secondItem="fzU-z1-vnr" secondAttribute="bottom" constant="20" id="Yod-g2-cql"/>
+                            <constraint firstItem="0Sg-l9-Ggt" firstAttribute="trailing" secondItem="zt2-GR-zie" secondAttribute="trailing" constant="97" id="cG5-WA-DK3"/>
+                            <constraint firstItem="Q9K-zq-bEd" firstAttribute="top" secondItem="zt2-GR-zie" secondAttribute="bottom" constant="8" symbolic="YES" id="ftt-jW-dod"/>
                             <constraint firstItem="fzU-z1-vnr" firstAttribute="leading" secondItem="0Sg-l9-Ggt" secondAttribute="leading" constant="52" id="hlu-f8-sVA"/>
+                            <constraint firstItem="zt2-GR-zie" firstAttribute="leading" secondItem="0Sg-l9-Ggt" secondAttribute="leading" constant="97" id="is8-Pc-XOl"/>
+                            <constraint firstItem="Q9K-zq-bEd" firstAttribute="leading" secondItem="0Sg-l9-Ggt" secondAttribute="leading" constant="97" id="kcM-oK-ZwS"/>
+                            <constraint firstItem="0Sg-l9-Ggt" firstAttribute="top" secondItem="fzU-z1-vnr" secondAttribute="top" constant="4" id="uyH-l0-rx7"/>
                             <constraint firstItem="0Sg-l9-Ggt" firstAttribute="trailing" secondItem="fzU-z1-vnr" secondAttribute="trailing" constant="51" id="xBV-xW-YiI"/>
-                            <constraint firstItem="zt2-GR-zie" firstAttribute="top" secondItem="fzU-z1-vnr" secondAttribute="bottom" constant="24" id="xpo-XW-FGm"/>
-                            <constraint firstItem="0Sg-l9-Ggt" firstAttribute="trailing" secondItem="zt2-GR-zie" secondAttribute="trailing" constant="97" id="y01-NV-poj"/>
+                            <constraint firstItem="0Sg-l9-Ggt" firstAttribute="trailing" secondItem="Q9K-zq-bEd" secondAttribute="trailing" constant="97" id="xZ1-ey-c3K"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="6f8-za-rFp"/>
@@ -224,6 +247,35 @@
             </objects>
             <point key="canvasLocation" x="100" y="808"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="mla-BY-not">
+            <objects>
+                <tableViewController id="LJT-ia-bzu" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="TYm-JS-aR1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="okpd2cell" id="Iqz-G9-KxZ">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iqz-G9-KxZ" id="UsC-kJ-2Da">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LJT-ia-bzu" id="lHi-mH-1Zj"/>
+                            <outlet property="delegate" destination="LJT-ia-bzu" id="zbd-dd-al7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="nSW-NB-qtA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UOv-e9-gMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="808"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z95-qv-aOz">
             <objects>
@@ -265,6 +317,7 @@
     </scenes>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
