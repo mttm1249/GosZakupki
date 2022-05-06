@@ -30,7 +30,7 @@ class ListViewController: UITableViewController {
          guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomListCell", for: indexPath) as? CustomListCell
          else { return UITableViewCell() }
          cell.infoLabel.text = listArray[indexPath.row]
-         cell.symbholLabel.text = "►"
+         cell.symbholLabel.text = "○"
          return cell
      }
   
