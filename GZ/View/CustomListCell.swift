@@ -8,8 +8,8 @@
 import UIKit
 
 class CustomListCell: UITableViewCell {
-
-    @IBOutlet weak var numberLabel: UILabel!
+    
+    @IBOutlet weak var symbholLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
-
+    
 }
