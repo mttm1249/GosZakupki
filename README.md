@@ -1,7 +1,7 @@
 # GosZakupki
 
 ### Поиск госзакупок по нескольким параметрам
-<img src="https://user-images.githubusercontent.com/87662841/166872560-b1c1c725-8241-4ad1-8db3-766dcf6fe36d.png" width="230" height="530"> <img src="https://user-images.githubusercontent.com/87662841/166749709-149c3172-fda4-4c04-885f-3827114be231.png" width="230" height="530"> 
+<img src="https://user-images.githubusercontent.com/87662841/167090964-deebe15b-57da-4750-b49a-76af0194f5bb.png" width="230" height="530"> <img src="https://user-images.githubusercontent.com/87662841/167090972-10a85abd-9e35-41dc-b047-2402d724dd8d.png" width="230" height="530"> <img src="https://user-images.githubusercontent.com/87662841/166749709-149c3172-fda4-4c04-885f-3827114be231.png" width="230" height="530"> 
 
 
 ### Добавление закупки в избранное
