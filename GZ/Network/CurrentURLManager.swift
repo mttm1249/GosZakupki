@@ -10,23 +10,25 @@ import Foundation
 class CurrentURL {
     
     // Default value
-    var url = "https://fz44.gosplan.info/api/v1/purchases"
+    var url = "https://fz44.gosplan.info/api/v1/purchases?"
 
     // URL Segments
     let segmentRegion = "&region="
     let segmentForInn = "&responsible_inn="
-    var segmentName = "&responsible_name="
-    var segmentInfo = "&purchase_object_info="
-    var segmentNumber = "&purchase_number="
+    let segmentName = "&responsible_name="
+    let segmentInfo = "&purchase_object_info="
+    let segmentNumber = "&purchase_number="
+    let segmentOkpd2 = "okpd2="
     var region = ""
     var inn = ""
     var name = ""
     var info = ""
     var number = ""
+    var okpd2 = ""
 
     // Options for PickerView
-    let fz44URL = "https://fz44.gosplan.info/api/v1/purchases"
-    let fz223URL = "https://223.gosplan.info/api/v1/purchases"
+    let fz44URL = "https://fz44.gosplan.info/api/v1/purchases?"
+    let fz223URL = "https://223.gosplan.info/api/v1/purchases?"
     
     static let shared = CurrentURL()
     private init() {}

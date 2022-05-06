@@ -7,8 +7,8 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-    
+class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, DataSendingDelegateProtocol {
+
     let shared = CurrentURL.shared
     let pickerArrayComponents = ["44-ФЗ", "223-ФЗ"]
     
@@ -18,9 +18,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var responsibleNameLabel: UITextField!
     @IBOutlet weak var purchaseObjectInfoLabel: UITextField!
     @IBOutlet var innTextField: UITextField!
+    @IBOutlet weak var okpd2Label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shared.okpd2 = ""
         pickerView.dataSource = self
         pickerView.delegate = self
         regionTextField.delegate = self
@@ -76,6 +78,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         responsibleNameLabel.text = ""
         purchaseObjectInfoLabel.text = ""
         innTextField.text = ""
+        okpd2Label.text = "--"
+        shared.okpd2 = ""
     }
     
     // MARK: Save
@@ -115,6 +119,19 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         } else {
             shared.info = ""
         }
+    }
+    
+    // Указываю делегата
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "list" {
+            let secondVC: ListViewController = segue.destination as! ListViewController
+            secondVC.delegate = self
+        }
+    }
+    
+    func sendDataToMainViewController(string: String) {
+        okpd2Label.text = string
+        shared.okpd2 = shared.segmentOkpd2 + string + "&"
     }
 }
 

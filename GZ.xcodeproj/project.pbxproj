@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA2F6AC028245C3800ADE780 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F6ABF28245C3800ADE780 /* ListViewController.swift */; };
+		DA2F6AC228245FE100ADE780 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F6AC128245FE100ADE780 /* ListModel.swift */; };
+		DA2F6AC42824633200ADE780 /* CustomListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2F6AC32824633200ADE780 /* CustomListCell.swift */; };
 		DA4D1E3C282113BE001A66C9 /* CurrentURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D1E3B282113BE001A66C9 /* CurrentURLManager.swift */; };
 		DA4D1E4428213C2F001A66C9 /* PurchaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4D1E4328213C2F001A66C9 /* PurchaseCell.xib */; };
 		DA563E0C2822B65400445AA9 /* FavoritePurchase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA563E0A2822B65400445AA9 /* FavoritePurchase.xcdatamodeld */; };
@@ -20,13 +23,16 @@
 		DAD5E5BC282019A700C4261A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD5E5BB282019A700C4261A /* Assets.xcassets */; };
 		DAD5E5BF282019A700C4261A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD5E5BD282019A700C4261A /* LaunchScreen.storyboard */; };
 		DAD5E5C828201A0500C4261A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5E5C728201A0500C4261A /* NetworkManager.swift */; };
-		DAD5E5CB28201A0F00C4261A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5E5C928201A0F00C4261A /* CustomCell.swift */; };
+		DAD5E5CB28201A0F00C4261A /* CustomPurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5E5C928201A0F00C4261A /* CustomPurchaseCell.swift */; };
 		DAD5E5CC28201A0F00C4261A /* PurchasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5E5CA28201A0F00C4261A /* PurchasesModel.swift */; };
 		DAD5E5CE2820246000C4261A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5E5CD2820246000C4261A /* MainViewController.swift */; };
 		DAD9E0FA28204E21007F5D67 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD9E0F928204E21007F5D67 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA2F6ABF28245C3800ADE780 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		DA2F6AC128245FE100ADE780 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		DA2F6AC32824633200ADE780 /* CustomListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListCell.swift; sourceTree = "<group>"; };
 		DA4D1E3B282113BE001A66C9 /* CurrentURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentURLManager.swift; sourceTree = "<group>"; };
 		DA4D1E4328213C2F001A66C9 /* PurchaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseCell.xib; sourceTree = "<group>"; };
 		DA563E0B2822B65400445AA9 /* FavoritePurchase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritePurchase.xcdatamodel; sourceTree = "<group>"; };
@@ -42,7 +48,7 @@
 		DAD5E5BE282019A700C4261A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAD5E5C0282019A700C4261A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAD5E5C728201A0500C4261A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		DAD5E5C928201A0F00C4261A /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		DAD5E5C928201A0F00C4261A /* CustomPurchaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPurchaseCell.swift; sourceTree = "<group>"; };
 		DAD5E5CA28201A0F00C4261A /* PurchasesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesModel.swift; sourceTree = "<group>"; };
 		DAD5E5CD2820246000C4261A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DAD9E0F928204E21007F5D67 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -86,7 +92,8 @@
 				DA563E0F2822D21D00445AA9 /* Main.storyboard */,
 				DAD5E5BD282019A700C4261A /* LaunchScreen.storyboard */,
 				DA4D1E4328213C2F001A66C9 /* PurchaseCell.xib */,
-				DAD5E5C928201A0F00C4261A /* CustomCell.swift */,
+				DAD5E5C928201A0F00C4261A /* CustomPurchaseCell.swift */,
+				DA2F6AC32824633200ADE780 /* CustomListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,6 +106,7 @@
 				DAD5E5CD2820246000C4261A /* MainViewController.swift */,
 				DAD5E5B6282019A700C4261A /* PurchasesViewController.swift */,
 				DA563E112822DA2300445AA9 /* FavoritesViewController.swift */,
+				DA2F6ABF28245C3800ADE780 /* ListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD5E5CA28201A0F00C4261A /* PurchasesModel.swift */,
+				DA2F6AC128245FE100ADE780 /* ListModel.swift */,
 				DA563E0A2822B65400445AA9 /* FavoritePurchase.xcdatamodeld */,
 			);
 			path = Models;
@@ -219,11 +228,14 @@
 				DAD5E5B7282019A700C4261A /* PurchasesViewController.swift in Sources */,
 				DA563E0E2822D1F200445AA9 /* ApiKey.swift in Sources */,
 				DAD9E0FA28204E21007F5D67 /* Extensions.swift in Sources */,
-				DAD5E5CB28201A0F00C4261A /* CustomCell.swift in Sources */,
+				DAD5E5CB28201A0F00C4261A /* CustomPurchaseCell.swift in Sources */,
 				DAD5E5B3282019A700C4261A /* AppDelegate.swift in Sources */,
 				DAD5E5CC28201A0F00C4261A /* PurchasesModel.swift in Sources */,
 				DAD5E5B5282019A700C4261A /* SceneDelegate.swift in Sources */,
 				DA563E122822DA2300445AA9 /* FavoritesViewController.swift in Sources */,
+				DA2F6AC42824633200ADE780 /* CustomListCell.swift in Sources */,
+				DA2F6AC228245FE100ADE780 /* ListModel.swift in Sources */,
+				DA2F6AC028245C3800ADE780 /* ListViewController.swift in Sources */,
 				DA4D1E3C282113BE001A66C9 /* CurrentURLManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
