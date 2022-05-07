@@ -30,7 +30,7 @@ class FavoritesViewController: UITableViewController {
     }
     
     // Удаление записи
-    private func deleteTask(_ tableView: UITableView, at indexPath: IndexPath) {
+    private func deleteCell(_ tableView: UITableView, at indexPath: IndexPath) {
         self.favoritePurchasesArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .bottom)
         
@@ -73,7 +73,7 @@ class FavoritesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            deleteTask(tableView, at: indexPath)
+            deleteCell(tableView, at: indexPath)
         }
     }
 }
