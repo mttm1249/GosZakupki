@@ -10,7 +10,7 @@ import CoreData
 
 class FavoritesViewController: UITableViewController {
     
-    var favoritePurchasesArray: [FavoritePurchase] = []
+    private var favoritePurchasesArray: [FavoritePurchase] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class FavoritesViewController: UITableViewController {
     }
     
     // Удаление записи
-    func deleteTask(_ tableView: UITableView, at indexPath: IndexPath) {
+    private func deleteTask(_ tableView: UITableView, at indexPath: IndexPath) {
         self.favoritePurchasesArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .bottom)
         
@@ -51,7 +51,7 @@ class FavoritesViewController: UITableViewController {
     // MARK: - Table view data source
     
     // Регистрируем CustomCell
-    func registerCustomCell() {
+    private func registerCustomCell() {
         let customCell = UINib(nibName: "PurchaseCell", bundle: nil)
         self.tableView.register(customCell,forCellReuseIdentifier: "CustomCell")
     }

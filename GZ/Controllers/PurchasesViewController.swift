@@ -10,8 +10,8 @@ import CoreData
 
 class PurchasesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let network = NetworkManager()
-    var purchasesArray = [Purchase]()
+    private let network = NetworkManager()
+    private var purchasesArray = [Purchase]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,7 +25,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         navigationItem.title = "Стр. \(network.page)"
     }
     
-    func saveUserData(_ purchases: [Purchase]) {
+    private func saveUserData(_ purchases: [Purchase]) {
         let context = AppDelegate.getContext()
         for purchase in purchases {
             let newEntry = NSEntityDescription.insertNewObject(forEntityName: "FavoritePurchase", into: context)
@@ -45,7 +45,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: Load data from JSON
     
-    func fetch() {
+    private func fetch() {
         network.loadJson() { (result) in
             switch result {
             case .success(let data):
@@ -57,7 +57,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         print("loading")
     }
     
-    func load(jsonData: Data) {
+    private func load(jsonData: Data) {
         do {
             let decodedData = try JSONDecoder().decode(Purchases.self, from: jsonData)
             purchasesArray = decodedData
@@ -80,7 +80,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // Индикатор загрузки
-    func showLoadingIndicator() {
+    private func showLoadingIndicator() {
         let spinner = UIActivityIndicatorView(style: .medium)
         spinner.startAnimating()
         spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
@@ -89,7 +89,7 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // Регистрируем CustomCell
-    func registerCustomCell() {
+    private func registerCustomCell() {
         let customCell = UINib(nibName: "PurchaseCell", bundle: nil)
         self.tableView.register(customCell,forCellReuseIdentifier: "CustomCell")
     }

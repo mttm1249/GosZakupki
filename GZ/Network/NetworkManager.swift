@@ -9,16 +9,16 @@ import Foundation
 
 class NetworkManager {
 
+    private var urlLastSegmentForPage = ["page=", "", "&per=5"]
     var page = 1
-    var urlLastSegmentForPage = ["page=", "", "&per=5"]
     
-    let currentURL = CurrentURL.shared.url
-    let region = CurrentURL.shared.region
-    let inn = CurrentURL.shared.inn
-    let name = CurrentURL.shared.name
-    let info = CurrentURL.shared.info
-    let number = CurrentURL.shared.number
-    let okpd2 = CurrentURL.shared.okpd2
+    private let currentURL = CurrentURL.shared.url
+    private let region = CurrentURL.shared.region
+    private let inn = CurrentURL.shared.inn
+    private let name = CurrentURL.shared.name
+    private let info = CurrentURL.shared.info
+    private let number = CurrentURL.shared.number
+    private let okpd2 = CurrentURL.shared.okpd2
     
     func nextPage() {
         page += 1

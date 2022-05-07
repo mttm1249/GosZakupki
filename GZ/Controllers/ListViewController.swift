@@ -13,6 +13,7 @@ protocol DataSendingDelegateProtocol {
 
 class ListViewController: UITableViewController {
     
+    private let listModel = ListModel()
     private let shared = CurrentURL.shared
     var delegate: DataSendingDelegateProtocol!
  
@@ -23,13 +24,13 @@ class ListViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listArray.count
+        return listModel.array.count
     }
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomListCell", for: indexPath) as? CustomListCell
          else { return UITableViewCell() }
-         cell.infoLabel.text = listArray[indexPath.row]
+         cell.infoLabel.text = listModel.array[indexPath.row]
          if indexPath == shared.cellIndexPath {
              cell.symbholLabel.text = "◉"
          } else {
@@ -39,7 +40,7 @@ class ListViewController: UITableViewController {
      }
   
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let note = listArray[indexPath.row]
+        let note = listModel.array[indexPath.row]
         let numberOfNote = "\(note.prefix(2))"
         let currentIndexPath = indexPath
         shared.cellIndexPath = currentIndexPath

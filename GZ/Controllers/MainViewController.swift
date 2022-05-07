@@ -9,8 +9,8 @@ import UIKit
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, DataSendingDelegateProtocol {
 
-    let shared = CurrentURL.shared
-    let pickerArrayComponents = ["44-ФЗ", "223-ФЗ"]
+    private let shared = CurrentURL.shared
+    private let pickerArrayComponents = ["44-ФЗ", "223-ФЗ"]
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet var regionTextField: UITextField!
@@ -22,7 +22,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shared.okpd2 = ""
         pickerView.dataSource = self
         pickerView.delegate = self
         regionTextField.delegate = self
@@ -84,6 +83,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     // MARK: Save
+    
     private func saveChanges() {
         // Поиск по региону
         if regionTextField.text != "" {
@@ -130,7 +130,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
     
-    func sendDataToMainViewController(string: String) {
+    internal func sendDataToMainViewController(string: String) {
         okpd2Label.text = string
         shared.okpd2 = shared.segmentOkpd2 + string + "&"
     }
