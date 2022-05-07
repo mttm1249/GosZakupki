@@ -9,26 +9,34 @@ import Foundation
 
 class CurrentURL {
     
-    // Default value
-    var url = "https://fz44.gosplan.info/api/v1/purchases?"
+    // URL
+    var baseURL = "https://fz44.gosplan.info"
+    var basePath = "/api/v1/purchases"
 
-    // URL Segments
-    let segmentRegion = "&region="
-    let segmentForInn = "&responsible_inn="
-    let segmentName = "&responsible_name="
-    let segmentInfo = "&purchase_object_info="
-    let segmentNumber = "&purchase_number="
-    let segmentOkpd2 = "okpd2="
-    var region = ""
-    var inn = ""
-    var name = ""
-    var info = ""
-    var number = ""
-    var okpd2 = ""
+    var params: [URLQueryItem] {
+        [
+            .init(name: "region", value: region),
+            .init(name: "responsible_inn", value: inn),
+            .init(name: "responsible_name", value: name),
+            .init(name: "purchase_object_info", value: info),
+            .init(name: "purchase_number", value: number),
+            .init(name: "okpd2", value: okpd2),
+            .init(name: "page", value: page)
+        ].filter { $0.value?.isEmpty == false }
+    }
+    
+    // Parametres values
+    var region: String?
+    var inn: String?
+    var name: String?
+    var info: String?
+    var number: String?
+    var okpd2: String?
+    var page: String?
 
     // Options for PickerView
-    let fz44URL = "https://fz44.gosplan.info/api/v1/purchases?"
-    let fz223URL = "https://223.gosplan.info/api/v1/purchases?"
+    let fz44URL = "https://fz44.gosplan.info"
+    let fz223URL = "https://223.gosplan.info"
     
     // SelectedCellIndexPath
     var cellIndexPath: IndexPath?

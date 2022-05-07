@@ -7,49 +7,58 @@
 
 import Foundation
 
+protocol Model: Codable { }
+extension Array: Model where Element: Model { }
+
+func asyncMain(action: @escaping () -> Void) {
+    DispatchQueue.main.async(execute: action)
+}
+
 class NetworkManager {
 
-    private var urlLastSegmentForPage = ["page=", "", "&per=5"]
+    private static let apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhcGlfa2V5IjoiODhiZjI4OWNhNTQxYWQxOCIsInNjb3BlcyI6WyJwdXJjaGFzZXMiLCJwbGFuZ3JhcGhzMjAyMCJdLCJpYXQiOjE2NTE5MTQ4MDUsImV4cCI6MTY1MjAwMTIwNSwiaXNzIjoiaHR0cHM6Ly9kZXYuZ29zcGxhbi5pbmZvIiwiYXVkIjoiaHR0cHM6Ly9nb3NwbGFuLmluZm8vYXBpL3YxIiwianRpIjoiNGQxZGQ5OTktNzRhNy00YTNkLWE0YmUtZTBiMDExOTYwN2Y2In0.voCkSKLc_GmfcgBjLpOALDs7tPSLoBkDBrAmZlImIQk"
+
     var page = 1
-    
-    private let currentURL = CurrentURL.shared.url
-    private let region = CurrentURL.shared.region
-    private let inn = CurrentURL.shared.inn
-    private let name = CurrentURL.shared.name
-    private let info = CurrentURL.shared.info
-    private let number = CurrentURL.shared.number
-    private let okpd2 = CurrentURL.shared.okpd2
     
     func nextPage() {
         page += 1
         let strPageValue = String(page)
-        urlLastSegmentForPage.insert(strPageValue, at: 1)
+        CurrentURL.shared.page = strPageValue
     }
+
+    private static var session: URLSession?
     
-    func loadJson(completion: @escaping (Result<Data, Error>) -> Void) {
-        let convertedSegment = urlLastSegmentForPage.joined(separator: "")
+    static let shared: NetworkManager = {
+        let authValue = "Bearer \(apiKey)"
+        let config = URLSessionConfiguration.default
+        config.httpAdditionalHeaders = ["Authorization": authValue]
+        session = URLSession(configuration: config)
+        return NetworkManager()
+    }()
+    
+    func loadJson<T: Model>(completion: @escaping (Result<T, Error>) -> Void) {
+        guard var urlComponents = URLComponents(string: CurrentURL.shared.baseURL) else { return }
+        urlComponents.path = CurrentURL.shared.basePath
+        urlComponents.queryItems = CurrentURL.shared.params
+
         
-        let string = currentURL + okpd2 + convertedSegment + number + region + inn + name + info
-        let encodedStr = string.encodeUrl
-        
-        if let url = URL(string: encodedStr) {
-            let sessionConfig = URLSessionConfiguration.default
-           
-            let authValue = "Bearer \(key)"
-            sessionConfig.httpAdditionalHeaders = ["Authorization": authValue ]
-            
-            let urlSession = URLSession(configuration: sessionConfig, delegate: self as? URLSessionDelegate, delegateQueue: nil).dataTask(with: url) { (data, response, error) in
+        if let url = urlComponents.url {
+            let urlSession = NetworkManager.session?.dataTask(with: url) { (data, response, error) in
                 if let error = error {
-                    completion(.failure(error))
+                    asyncMain { completion(.failure(error)) }
                 }
                 if let data = data {
-                    completion(.success(data))
+                    do {
+                        let value = try JSONDecoder().decode(T.self, from: data)
+                        asyncMain { completion(.success(value)) }
+                    } catch {
+                        print(error)
+                        asyncMain { completion(.failure(error)) }
+                    }
                 }
             }
-            urlSession.resume()
+            urlSession?.resume()
         }
     }
 }
-
-
 

@@ -49,8 +49,6 @@ class FavoritesViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
-    // Регистрируем CustomCell
     private func registerCustomCell() {
         let customCell = UINib(nibName: "PurchaseCell", bundle: nil)
         self.tableView.register(customCell,forCellReuseIdentifier: "CustomCell")

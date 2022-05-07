@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - PurchaseElement
 
-struct Purchase: Codable {
+struct Purchase: Model {
     let region: Int
     let purchaseObjectInfo: String
     let purchaseNumber: String

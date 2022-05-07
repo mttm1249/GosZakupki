@@ -29,7 +29,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     // MARK: UIPickerViewDataSource
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -45,16 +44,15 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch row {
         case 0:
-            shared.url = shared.fz44URL
+            shared.baseURL = shared.fz44URL
         case 1:
-            shared.url = shared.fz223URL
+            shared.baseURL = shared.fz223URL
         default:
             break
         }
     }
     
     // MARK: UITextFieldDelegate
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let textFieldText = textField.text,
               let rangeOfTextToReplace = Range(range, in: textFieldText) else {
@@ -83,40 +81,39 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     // MARK: Save
-    
     private func saveChanges() {
         // Поиск по региону
         if regionTextField.text != "" {
-            shared.region = shared.segmentRegion + regionTextField.text!
+            shared.region = regionTextField.text!
             let regionNumber = Int(regionTextField.text!)!
             if regionNumber > 95 {
                 regionTextField.text = "95"
-                shared.region = shared.segmentRegion + regionTextField.text!
+                shared.region = regionTextField.text!
             }
         } else {
             shared.region = ""
         }
         // Поиск по номеру закупки
         if numberTextField.text != "" {
-            shared.number = shared.segmentNumber + numberTextField.text!
+            shared.number = numberTextField.text!
         } else {
             shared.number = ""
         }
         // Поиск по наименованию заказчика
         if responsibleNameLabel.text != "" {
-            shared.name = shared.segmentName + responsibleNameLabel.text!
+            shared.name = responsibleNameLabel.text!
         } else {
             shared.name = ""
         }
         // Поиск по ИНН
         if innTextField.text != "" {
-            shared.inn = shared.segmentForInn + innTextField.text!
+            shared.inn = innTextField.text!
         } else {
             shared.inn = ""
         }
         // Поиск по наименованию закупки
         if purchaseObjectInfoLabel.text != "" {
-            shared.info = shared.segmentInfo + purchaseObjectInfoLabel.text!
+            shared.info = purchaseObjectInfoLabel.text!
         } else {
             shared.info = ""
         }
@@ -132,7 +129,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     internal func sendDataToMainViewController(string: String) {
         okpd2Label.text = string
-        shared.okpd2 = shared.segmentOkpd2 + string + "&"
+        shared.okpd2 = string
     }
 }
 

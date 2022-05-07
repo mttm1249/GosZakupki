@@ -10,8 +10,8 @@ import CoreData
 
 class PurchasesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private let network = NetworkManager()
     private var purchasesArray = [Purchase]()
+    private var page = 1
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,9 +22,10 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         registerCustomCell()
         fetch()
-        navigationItem.title = "Стр. \(network.page)"
+        navigationItem.title = "Стр. \(page)"
     }
     
+    // MARK: CoreData
     private func saveUserData(_ purchases: [Purchase]) {
         let context = AppDelegate.getContext()
         for purchase in purchases {
@@ -44,12 +45,12 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: Load data from JSON
-    
     private func fetch() {
-        network.loadJson() { (result) in
+        NetworkManager.shared.loadJson { [weak self] (result: Result<Purchases, Error>) in
             switch result {
             case .success(let data):
-                self.load(jsonData: data)
+                self?.purchasesArray = data
+                self?.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -57,25 +58,14 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
         print("loading")
     }
     
-    private func load(jsonData: Data) {
-        do {
-            let decodedData = try JSONDecoder().decode(Purchases.self, from: jsonData)
-            purchasesArray = decodedData
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
     // Листаем страницы
     @IBAction func nextDayButton(_ sender: Any) {
-        network.nextPage()
+        //network.nextPage()
         purchasesArray.removeAll()
         tableView.tableFooterView?.isHidden = false
         fetch()
-        navigationItem.title = "Стр. \(network.page)"
+        page += 1
+        navigationItem.title = "Стр. \(page)"
         tableView.reloadData()
     }
     
@@ -95,7 +85,6 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: UITableViewDataSource
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return purchasesArray.count
     }

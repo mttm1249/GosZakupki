@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,10 +17,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GOz-Tt-fb0">
-                        <rect key="frame" x="20" y="55" width="423" height="50"/>
+                        <rect key="frame" x="20" y="46" width="423" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Fyw-O8-eLN"/>
-                            <constraint firstAttribute="width" constant="423" id="qhW-kq-YHH"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                         <nil key="textColor"/>
@@ -29,36 +29,30 @@
                         <rect key="frame" x="308" y="19" width="135" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="TV4-36-YFM"/>
-                            <constraint firstAttribute="width" constant="135" id="kLF-GY-xP5"/>
+                            <constraint firstAttribute="width" constant="135" id="eQn-5N-AHY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто купил" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ijt-6Z-cI2">
-                        <rect key="frame" x="20" y="113" width="423" height="25"/>
+                        <rect key="frame" x="20" y="104" width="423" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="7e2-v0-MVX"/>
-                            <constraint firstAttribute="width" constant="423" id="Zrg-fi-VMj"/>
+                            <constraint firstAttribute="height" constant="44" id="7e2-v0-MVX"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" systemColor="tintColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Информация" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r95-qr-hrY">
-                        <rect key="frame" x="20" y="146" width="423" height="115"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="115" id="jl6-V6-uzh"/>
-                            <constraint firstAttribute="width" constant="423" id="u9T-Xy-Erd"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="20" y="156" width="423" height="105"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qpe-os-INj">
                         <rect key="frame" x="20" y="19" width="271" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="271" id="Mpy-7U-DHE"/>
                             <constraint firstAttribute="height" constant="21" id="mVx-uS-ZXE"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
@@ -72,7 +66,7 @@
                     <constraint firstItem="GOz-Tt-fb0" firstAttribute="leading" secondItem="X5Z-pE-4KU" secondAttribute="leading" constant="20" symbolic="YES" id="5ks-WM-1K6"/>
                     <constraint firstAttribute="trailing" secondItem="r95-qr-hrY" secondAttribute="trailing" constant="20" symbolic="YES" id="Cfq-7c-a3x"/>
                     <constraint firstItem="d8v-s4-q0t" firstAttribute="leading" secondItem="qpe-os-INj" secondAttribute="trailing" constant="17" id="FS9-WQ-S0w"/>
-                    <constraint firstItem="GOz-Tt-fb0" firstAttribute="top" secondItem="qpe-os-INj" secondAttribute="bottom" constant="15" id="Fva-rS-yr5"/>
+                    <constraint firstItem="GOz-Tt-fb0" firstAttribute="top" secondItem="qpe-os-INj" secondAttribute="bottom" constant="6" id="Fva-rS-yr5"/>
                     <constraint firstItem="d8v-s4-q0t" firstAttribute="top" secondItem="X5Z-pE-4KU" secondAttribute="top" constant="19" id="Lf7-mC-5yf"/>
                     <constraint firstAttribute="trailing" secondItem="GOz-Tt-fb0" secondAttribute="trailing" constant="20" symbolic="YES" id="NKf-hF-OT8"/>
                     <constraint firstAttribute="bottom" secondItem="r95-qr-hrY" secondAttribute="bottom" constant="16" id="SAv-Xj-IKp"/>
@@ -80,9 +74,9 @@
                     <constraint firstItem="qpe-os-INj" firstAttribute="leading" secondItem="X5Z-pE-4KU" secondAttribute="leading" constant="20" symbolic="YES" id="YJk-Oh-ltC"/>
                     <constraint firstItem="qpe-os-INj" firstAttribute="top" secondItem="X5Z-pE-4KU" secondAttribute="top" constant="19" id="e5k-Rt-QnT"/>
                     <constraint firstItem="r95-qr-hrY" firstAttribute="leading" secondItem="X5Z-pE-4KU" secondAttribute="leading" constant="20" symbolic="YES" id="fhY-7l-vWe"/>
-                    <constraint firstItem="r95-qr-hrY" firstAttribute="top" secondItem="Ijt-6Z-cI2" secondAttribute="bottom" constant="8" symbolic="YES" id="gcY-72-tbC"/>
-                    <constraint firstItem="Ijt-6Z-cI2" firstAttribute="top" secondItem="GOz-Tt-fb0" secondAttribute="bottom" constant="8" symbolic="YES" id="q8H-qf-uwp"/>
-                    <constraint firstItem="GOz-Tt-fb0" firstAttribute="top" secondItem="d8v-s4-q0t" secondAttribute="bottom" constant="15" id="ycl-Ep-xrA"/>
+                    <constraint firstItem="r95-qr-hrY" firstAttribute="top" secondItem="Ijt-6Z-cI2" secondAttribute="bottom" constant="8" id="gcY-72-tbC"/>
+                    <constraint firstItem="Ijt-6Z-cI2" firstAttribute="top" secondItem="GOz-Tt-fb0" secondAttribute="bottom" constant="8" id="q8H-qf-uwp"/>
+                    <constraint firstItem="GOz-Tt-fb0" firstAttribute="top" secondItem="d8v-s4-q0t" secondAttribute="bottom" constant="6" id="ycl-Ep-xrA"/>
                 </constraints>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -96,4 +90,9 @@
             <point key="canvasLocation" x="167.39130434782609" y="162.38839285714286"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
