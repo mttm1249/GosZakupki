@@ -13,11 +13,11 @@ protocol DataSendingDelegateProtocol {
 
 class ListViewController: UITableViewController {
     
+    private let shared = CurrentURL.shared
     var delegate: DataSendingDelegateProtocol!
-        
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -30,13 +30,19 @@ class ListViewController: UITableViewController {
          guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomListCell", for: indexPath) as? CustomListCell
          else { return UITableViewCell() }
          cell.infoLabel.text = listArray[indexPath.row]
-         cell.symbholLabel.text = "○"
+         if indexPath == shared.cellIndexPath {
+             cell.symbholLabel.text = "◉"
+         } else {
+             cell.symbholLabel.text = "○"
+         }
          return cell
      }
   
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let note = listArray[indexPath.row]
         let numberOfNote = "\(note.prefix(2))"
+        let currentIndexPath = indexPath
+        shared.cellIndexPath = currentIndexPath
         delegate?.sendDataToMainViewController(string: numberOfNote)
         dismiss(animated: true)
     }

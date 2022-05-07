@@ -80,6 +80,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         innTextField.text = ""
         okpd2Label.text = "--"
         shared.okpd2 = ""
+        shared.cellIndexPath = nil
     }
     
     // MARK: Save

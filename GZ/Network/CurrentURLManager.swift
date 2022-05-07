@@ -30,6 +30,9 @@ class CurrentURL {
     let fz44URL = "https://fz44.gosplan.info/api/v1/purchases?"
     let fz223URL = "https://223.gosplan.info/api/v1/purchases?"
     
+    // SelectedCellIndexPath
+    var cellIndexPath: IndexPath?
+    
     static let shared = CurrentURL()
     private init() {}
 }
