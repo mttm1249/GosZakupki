@@ -16,7 +16,7 @@ func asyncMain(action: @escaping () -> Void) {
 
 class NetworkManager {
 
-    private static let apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhcGlfa2V5IjoiODhiZjI4OWNhNTQxYWQxOCIsInNjb3BlcyI6WyJwdXJjaGFzZXMiLCJwbGFuZ3JhcGhzMjAyMCJdLCJpYXQiOjE2NTE5MTQ4MDUsImV4cCI6MTY1MjAwMTIwNSwiaXNzIjoiaHR0cHM6Ly9kZXYuZ29zcGxhbi5pbmZvIiwiYXVkIjoiaHR0cHM6Ly9nb3NwbGFuLmluZm8vYXBpL3YxIiwianRpIjoiNGQxZGQ5OTktNzRhNy00YTNkLWE0YmUtZTBiMDExOTYwN2Y2In0.voCkSKLc_GmfcgBjLpOALDs7tPSLoBkDBrAmZlImIQk"
+    private static let apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhcGlfa2V5IjoiODhiZjI4OWNhNTQxYWQxOCIsInNjb3BlcyI6WyJwdXJjaGFzZXMiLCJwbGFuZ3JhcGhzMjAyMCJdLCJpYXQiOjE2NTE5OTc4NjIsImV4cCI6MTY1MjA4NDI2MiwiaXNzIjoiaHR0cHM6Ly9kZXYuZ29zcGxhbi5pbmZvIiwiYXVkIjoiaHR0cHM6Ly9nb3NwbGFuLmluZm8vYXBpL3YxIiwianRpIjoiZmVkYzFiMjAtMzdhNy00M2E0LTk5OWUtNmJhNTQ5N2E5NDNhIn0.mV5GbHxexG11g7DG9ILkb4b7TF9f8TD02kGAXkoT7qY"
 
     var page = 1
     
@@ -41,7 +41,6 @@ class NetworkManager {
         urlComponents.path = CurrentURL.shared.basePath
         urlComponents.queryItems = CurrentURL.shared.params
 
-        
         if let url = urlComponents.url {
             let urlSession = NetworkManager.session?.dataTask(with: url) { (data, response, error) in
                 if let error = error {

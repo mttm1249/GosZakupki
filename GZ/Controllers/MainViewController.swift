@@ -13,11 +13,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     private let pickerArrayComponents = ["44-ФЗ", "223-ФЗ"]
     
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet var regionTextField: UITextField!
+    @IBOutlet weak var regionTextField: UITextField!
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var responsibleNameLabel: UITextField!
     @IBOutlet weak var purchaseObjectInfoLabel: UITextField!
-    @IBOutlet var innTextField: UITextField!
+    @IBOutlet weak var innTextField: UITextField!
     @IBOutlet weak var okpd2Label: UILabel!
     
     override func viewDidLoad() {

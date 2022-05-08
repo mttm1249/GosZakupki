@@ -9,7 +9,7 @@ import UIKit
 
 class CustomListCell: UITableViewCell {
     
-    @IBOutlet weak var symbholLabel: UILabel!
+    @IBOutlet weak var checkboxLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     
 }

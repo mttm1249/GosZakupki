@@ -31,9 +31,9 @@ class ListViewController: UITableViewController {
          else { return UITableViewCell() }
          cell.infoLabel.text = listModel.array[indexPath.row]
          if indexPath == shared.cellIndexPath {
-             cell.symbholLabel.text = "◉"
+             cell.checkboxLabel.text = "◉"
          } else {
-             cell.symbholLabel.text = "○"
+             cell.checkboxLabel.text = "○"
          }
          return cell
      }
