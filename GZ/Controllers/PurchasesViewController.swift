@@ -60,7 +60,6 @@ class PurchasesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // Листаем страницы
     @IBAction func nextDayButton(_ sender: Any) {
-        //network.nextPage()
         purchasesArray.removeAll()
         tableView.tableFooterView?.isHidden = false
         fetch()
