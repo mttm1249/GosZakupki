@@ -16,7 +16,7 @@ func asyncMain(action: @escaping () -> Void) {
 
 class NetworkManager {
 
-    private static let apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhcGlfa2V5IjoiODhiZjI4OWNhNTQxYWQxOCIsInNjb3BlcyI6WyJwdXJjaGFzZXMiLCJwbGFuZ3JhcGhzMjAyMCJdLCJpYXQiOjE2NTI0Mjc5OTMsImV4cCI6MTY1MjUxNDM5MywiaXNzIjoiaHR0cHM6Ly9kZXYuZ29zcGxhbi5pbmZvIiwiYXVkIjoiaHR0cHM6Ly9nb3NwbGFuLmluZm8vYXBpL3YxIiwianRpIjoiZGFmYjg2MTYtZDljMi00YTZiLTg0MDItN2M1ZTEyZDdjMjc4In0.GP2v89OGkvys3jUzZfHm-kG27JgBd9N-_9hL0T9Meys"
+    private static let apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhcGlfa2V5IjoiODhiZjI4OWNhNTQxYWQxOCIsInNjb3BlcyI6WyJwdXJjaGFzZXMiLCJwbGFuZ3JhcGhzMjAyMCJdLCJpYXQiOjE2NTI2NDc5NzEsImV4cCI6MTY1MjczNDM3MSwiaXNzIjoiaHR0cHM6Ly9kZXYuZ29zcGxhbi5pbmZvIiwiYXVkIjoiaHR0cHM6Ly9nb3NwbGFuLmluZm8vYXBpL3YxIiwianRpIjoiZjYzZmFmYjctN2FkMC00ZDA3LTkzZmMtYmI3ZTBiNThmNWUxIn0.1HRGEiPNUgMX2_O9ToUp9sDX1hapZ-gK7L-a3mjHn34"
 
     var page = 1
     
