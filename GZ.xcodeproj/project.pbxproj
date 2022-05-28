@@ -77,7 +77,6 @@
 			children = (
 				DAD9E0F928204E21007F5D67 /* Extensions.swift */,
 				DAD5E5BB282019A700C4261A /* Assets.xcassets */,
-				DA7D1B2528226EFD005451B6 /* .gitignore */,
 				DAD5E5C0282019A700C4261A /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -121,6 +120,7 @@
 		DAD5E5A6282019A700C4261A = {
 			isa = PBXGroup;
 			children = (
+				DA7D1B2528226EFD005451B6 /* .gitignore */,
 				DAD5E5B1282019A700C4261A /* GZ */,
 				DAD5E5B0282019A700C4261A /* Products */,
 			);
