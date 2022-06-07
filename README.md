@@ -8,7 +8,7 @@
 <img src="https://user-images.githubusercontent.com/87662841/167288432-db1f0d68-bb9c-47d3-bdc5-b990ea3f9330.png" width="230" height="530"> <img src="https://user-images.githubusercontent.com/87662841/167288489-d7a8f58f-18fd-40be-a0c4-1744c508d550.png" width="230" height="530">
 
 ## Installation: 
-1. Download archive with progect.
+1. Download archive with project.
 2. Unzip it.
 3. Open with Xcode.
 4. Install on iPhone with iOS 15.0+
